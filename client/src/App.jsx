@@ -7,7 +7,7 @@ import OnePost from './OnePost';
 
 function App() {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="sm">
       <Router>
         <nav>
           <ul>
