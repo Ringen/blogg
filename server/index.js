@@ -8,31 +8,13 @@ app.use(bodyParser.json());
 
 const posts = [
   {
-    id: '0',
-    title: 'My FIRST post',
-    preamble: 'This is just a short post',
-    text: 'lorem ipsum dolor sit amet',
-    author: 'Lisa Sterner',
-    email: 'lisa.m.sterner@gmail.com',
-    date: '2021-09-20',
-  },
-  {
     id: '1',
-    title: 'My SECOND post',
-    preamble: 'This is just a short post',
-    text: 'lorem ipsum dolor sit amet',
+    title: 'Hello world!',
+    preamble: 'Welcome to my hoods.',
+    text: 'This is a dummy post to make sure there is some content :)',
     author: 'Lisa Sterner',
     email: 'lisa.m.sterner@gmail.com',
-    date: '2021-09-20',
-  },
-  {
-    id: '2',
-    title: 'My THIRD post',
-    preamble: 'This is just a short post',
-    text: 'lorem ipsum dolor sit amet',
-    author: 'Lisa Sterner',
-    email: 'lisa.m.sterner@gmail.com',
-    date: '2021-09-20',
+    date: 'Wed Sep 22 2021',
   },
 ];
 
@@ -48,7 +30,11 @@ app.get('/api/posts/:id', (req, res) => {
 });
 
 app.post('/api/posts', async (req, res) => {
-  await posts.push(req.body);
+  await posts.push({
+    ...req.body,
+    id: posts.length++,
+    date: new Date().toDateString(),
+  });
   res.json(posts);
 });
 
