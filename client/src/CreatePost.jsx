@@ -90,9 +90,12 @@ function CreatePost() {
               error: true,
               helperText: errors['email']
             })}
+            sx={{
+              marginLeft: '1.5rem'
+            }}
         />
       </div>
-      <Button disabled={!formIsValid()} variant="contained" type="submit">Create post</Button>
+      <Button disabled={!formIsValid()} variant="contained" type="submit" sx={{ marginTop: '1.5rem'}}>Create post</Button>
     </form>
   );
 }
