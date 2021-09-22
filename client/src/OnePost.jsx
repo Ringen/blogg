@@ -7,8 +7,6 @@ const OnePost = () => {
     const [post, setPost] = useState({});
     const { id } = useParams();
 
-    console.log('client id', id);
-    
     const fetchPost = async () => {
       try {
           const { data } = await axios.get(`/api/posts/${id}`);

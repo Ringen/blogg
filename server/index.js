@@ -32,7 +32,7 @@ app.get('/api/posts/:id', (req, res) => {
 app.post('/api/posts', async (req, res) => {
   await posts.push({
     ...req.body,
-    id: posts.length++,
+    id: posts.length + 1,
     date: new Date().toDateString(),
   });
   res.json(posts);
