@@ -28,6 +28,7 @@ const initialFormValues = {
   success: false,
 };
 
+// it had beed nice with some tests here :)
 export const useFormControls = () => {
   const [values, setValues] = useState(initialFormValues);
   const [errors, setErrors] = useState({});
@@ -90,6 +91,9 @@ export const useFormControls = () => {
       formSubmitted: true,
       success: true,
     });
+
+    // redirect to the start page
+    window.location.href = '/';
   };
 
   const handleError = () => {
