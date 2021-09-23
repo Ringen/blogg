@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(bodyParser.json());
 
+// save the posts locally in application memory
+// add one default blog post to start with
 const posts = [
   {
     id: '1',
