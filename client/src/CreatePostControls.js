@@ -5,7 +5,7 @@ const createBlogPost = async (values, successCallback, errorCallback) => {
   const post = {
     title: values.title,
     preamble: values.preamble,
-    text: values.test,
+    text: values.text,
     author: values.author,
     email: values.email,
   };
